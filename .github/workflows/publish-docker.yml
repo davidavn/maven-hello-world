@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn -f myapp/pom.xml clean install
+      run: mvn -f myapp/pom.xml clean install --quiet
 
     - run: mkdir staging && cp myapp/target/*.jar staging
     - uses: actions/upload-artifact@v3
@@ -51,4 +51,4 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
     
     - name: run dockerfile
-      run: docker run davnerson/myapp:${{ github.event.release.tag_name }}
+      run: docker run davnerson/myapp:latest
