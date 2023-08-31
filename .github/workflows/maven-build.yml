@@ -13,11 +13,6 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      
-      - name: build with Maven
-        run: mvn compile
 
-      - name: test with Maven
+      - name: build and test with Maven
         run: mvn verify
-
-
