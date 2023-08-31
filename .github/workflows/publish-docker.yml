@@ -25,7 +25,7 @@ jobs:
 
     - name: Get project version
       id: get_version
-      run: echo ::set-output name=version::$(mvn -f myap/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout)
+      run: echo ::set-output name=version::$(mvn -f myapp/pom.xml help:evaluate -Dexpression=project.version -q -DforceStdout)
 
     - name: Build with Maven
       run: mvn -f myapp/pom.xml clean install --quiet
@@ -54,8 +54,8 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: davnerson/myapp:latest
+        tags: davnerson/myapp:${{ steps.get_version.outputs.version }}
         labels: ${{ steps.meta.outputs.labels }}
     
     - name: run dockerfile
-      run: docker run davnerson/myapp:latest
+      run: docker run davnerson/myapp:${{ steps.get_version.outputs.version }}
