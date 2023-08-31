@@ -13,6 +13,6 @@ patch=${version_parts[2]}
 new_patch=$((patch + 1))
 
 # Set the new version using the versions plugin
-mvn versions:set -DnewVersion="$major.$minor.$new_patch"
+mvn -f myapp/pom.xml versions:set -DnewVersion="$major.$minor.$new_patch"
 
 echo "Version incremented to $major.$minor.$new_patch"
