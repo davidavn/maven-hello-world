@@ -3,6 +3,8 @@
 
 name: Maven Package
 
+name: "Publish Docker"
+
 on: [push]
 
 jobs:
