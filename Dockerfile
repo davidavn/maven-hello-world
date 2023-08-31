@@ -2,7 +2,7 @@ FROM openjdk:17-jdk-slim
 
 RUN groupadd -r bot && bot -r -g bot bot
 
-COPY ./staging /usr/src/myapp
+COPY ./myapp/target/*.jar /usr/src/myapp
 
 WORKDIR /usr/src/myapp
 
