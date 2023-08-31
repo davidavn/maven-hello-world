@@ -54,7 +54,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ steps.meta.outputs.tags  }}
+        tags: myapp:${{ steps.get_version.outputs.version }}
         labels: ${{ steps.meta.outputs.labels }}
     
     - name: run dockerfile
