@@ -4,9 +4,9 @@ RUN groupadd -r bot && useradd -r -g bot bot
 
 COPY staging /usr/src/myapp
 
-WORKDIR /usr/src/myapp
+RUN chown -R bot:bot /usr/src/myapp
 
-RUN chown -R bot:bot /myapp
+WORKDIR /usr/src/myapp
 
 USER bot
 
