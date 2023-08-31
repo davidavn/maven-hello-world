@@ -12,7 +12,7 @@ jobs:
           distribution: 'temurin'
       
       - name: build with Maven
-        run: mvn compile
+        run: mvn compile --file myapp/pom.xml
 
       - name: test with Maven
         run: mvn verify
