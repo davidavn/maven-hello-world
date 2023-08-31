@@ -10,4 +10,4 @@ WORKDIR /usr/src/myapp
 
 USER bot
 
-CMD ["java", "-jar", "*.jar"]
+CMD ["java", "-jar", "myapp-1.0.0.jar"]
