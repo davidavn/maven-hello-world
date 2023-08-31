@@ -11,6 +11,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       
+      - name: check repo
+        run: pwd
+      - name: check folders
+        run: ls
       - name: build with Maven
         run: mvn compile --file myapp/pom.xml
 
