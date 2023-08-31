@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
 
     - name: update version
-      run: update-version.sh
+      run: ./update-version.sh
 
     - name: Get project version
       id: get_version
