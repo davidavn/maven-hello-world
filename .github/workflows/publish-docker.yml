@@ -58,4 +58,4 @@ jobs:
         labels: ${{ steps.meta.outputs.labels }}
     
     - name: run dockerfile
-      run: docker run davnerson/myapp:feature
+      run: docker run davnerson/myapp:latest
