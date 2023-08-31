@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-slim
 
-RUN groupadd -r bot && bot -r -g bot bot
+RUN groupadd -r bot && useradd -r -g bot bot
 
 COPY ./myapp/target/*.jar /usr/src/myapp
 
