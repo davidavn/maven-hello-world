@@ -3,6 +3,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    working-directory: myapp
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -16,7 +17,7 @@ jobs:
       - name: check folders
         run: ls
       - name: build with Maven
-        run: mvn compile --file myapp/pom.xml
+        run: mvn compile
 
       - name: test with Maven
         run: mvn verify
