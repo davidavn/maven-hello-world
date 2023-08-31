@@ -1,4 +1,4 @@
-FROM openjdk:17-jre-slim
+FROM openjdk:17-jdk-slim
 
 RUN groupadd -r bot && bot -r -g bot bot
 
